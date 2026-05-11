@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import Note from "./components/Note";
+import AppBar from "./components/AppBar";
 import "./App.css";
 
 function App() {
@@ -17,6 +18,8 @@ function App() {
 
   return (
     <>
+      <AppBar />
+      
       {notes.map((note) => (
         <Note key={`note__${note.id}`} title={note.title}>
           {note.content}
