@@ -39,7 +39,7 @@ export default function Formulario(props) {
                 className="autoresize"
                 name="detalhes"
                 placeholder="Digite o conteúdo..."
-                onChange={(event => setTitulo(event.target.value))}
+                onChange={(event => setContent(event.target.value))}
             ></textarea>
             
             <button className="btn" type="submit">Criar</button>
