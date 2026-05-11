@@ -14,6 +14,12 @@ function App() {
       .then((res) => setNotes(res.data));
   }
 
+  const deletarNota = (id) => {
+    axios
+      .delete(`http://localhost:8000/api/notes/${id}/`)
+      .then(() => carregaNotas());
+  }
+
   useEffect(() => {
     carregaNotas();
   }, []);
@@ -25,7 +31,12 @@ function App() {
         <Formulario loadNotes={carregaNotas}/>
         <div className="card-container">
           {notes.map((note) => (
-            <Note key={`note__${note.id}`} title={note.title}>
+            <Note 
+            key={`note__${note.id}`}
+            id={note.id} 
+            title={note.title}
+            onDelete={deletarNota}
+            >
               {note.content}
             </Note>
           ))}
