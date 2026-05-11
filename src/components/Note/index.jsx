@@ -7,4 +7,4 @@ export default function Note(props) {
       <div className="card-content">{props.children}</div>
     </div>
   );
-}
+} 
